@@ -16,10 +16,20 @@ let message = document.getElementById("message");
 // récupérer le click du bouton rejouer
 let rejouer = document.getElementById("reload");
 
+//remplir le champ historique
+let historique = document.getElementById("historique")
+//tableau pour l'historique
+let tableauHistorique = []
+let historiqueValue = ""
+
 //comparer les deux valeurs
 button.addEventListener("click", (event) => {
+    // parse l'integer dans le string valeurUser
     let parseValueUser = parseInt(valeurUser.value);
     // console.log(parseValueUser);
+    //historique du user
+    historiqueValue = tableauHistorique.push(parseValueUser);
+    console.log(historiqueValue)
     essai++;
 
     if (valeurAleatoire === parseValueUser) {
@@ -27,11 +37,16 @@ button.addEventListener("click", (event) => {
         message.style.color = "green"
     } else if (valeurAleatoire > parseValueUser) {
         message.innerText = "Trop petit ! Essaye encore";
-        message.style.color = "red"
+        message.style.color = "red";
+        historique.innerText = historiqueValue;
     } else {
         message.innerText = "Trop grand ! Essaye encore";
-        message.style.color = "red"
+        message.style.color = "red";
+        historique.innerText = historiqueValue;
     }
 });
 
-//rejouer
+//permet de rejouer
+rejouer.addEventListener("click", (event) => {
+    location.reload()
+});
