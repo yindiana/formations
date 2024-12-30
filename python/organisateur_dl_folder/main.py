@@ -18,13 +18,13 @@ options
 """
 
 EXAMPLE = r"""
-python3 main.py
+python main.py
 """
 
 RETURN = r"""
 
 """
-
+#import des librairies
 import os
 import shutil       #pour déplacer les fichiers dans le bon répertoire
 
