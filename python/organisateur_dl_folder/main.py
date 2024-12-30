@@ -5,10 +5,13 @@ module:
 author: yindiana.fr
 short_description: 
 description:
-    - 
+    - recherche les extensions mentionnées dans le code et les parses
+    - pour chaque type d'extension on créer un dossier si ce n'est pas déjà fait
+    - déplace les fichiers dans le bon dossier
 
 prérequis
     - python -m pip install os
+    - python -m pip install shutil
 
 options
     N/A
